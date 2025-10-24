@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/data-herocorp.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/sql/01_reference_data.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/sql/02_hero_attribute.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/sql/03_hero_power.sql" dialect="MySQL" />
+    <file url="PROJECT" dialect="MySQL" />
+  </component>
+</project>

@@ -42,13 +42,13 @@
             where nom like :nom  or
             prenom like :prenom or 
             pseudo like :pseudo or 
-            capacite like :capacite");
+            capacite_id like :capacite_id");
         $valeur="%".$_GET['search']."%";
         $requete->bindParam("nom",$valeur);
         $requete->bindParam("prenom", $valeur);
         $requete->bindParam("pseudo", $valeur);
-        $requete->bindParam("capacite", $valeur);
-        $requete->execute();;
+        $requete->bindParam("capacite_id", $valeur);
+        $requete->execute();
 
     }
     else $requete=$db->query("select * from heros");
@@ -75,8 +75,6 @@
     </tbody>
 
 </table>
-
-
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/2.3.4/js/dataTables.js"></script>

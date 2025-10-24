@@ -6,7 +6,7 @@ class Heros
     private $nom;
     private $prenom;
     private $pseudo;
-    private $capacite;
+    private $capacite_id;
 
     /**
      * @return mixed
@@ -77,15 +77,15 @@ class Heros
      */
     public function getCapacite()
     {
-        return $this->capacite;
+        return $this->capacite_id;
     }
 
     /**
-     * @param mixed $capacite
+     * @param mixed $capacite_id
      */
-    public function setCapacite($capacite)
+    public function setCapacite($capacite_id)
     {
-        $this->capacite = $capacite;
+        $this->capacite_id = $capacite_id;
     }
 
     /**
@@ -93,17 +93,17 @@ class Heros
      */
     public function getEquipe()
     {
-        return $this->equipe;
+        return $this->equipe_id;
     }
 
     /**
-     * @param mixed $equipe
+     * @param mixed $equipe_id
      */
-    public function setEquipe($equipe)
+    public function setEquipe($equipe_id)
     {
-        $this->equipe = $equipe;
+        $this->equipe_id = $equipe_id;
     }
-    private $equipe;
+    private $equipe_id;
 
     public function __construct()
     {
