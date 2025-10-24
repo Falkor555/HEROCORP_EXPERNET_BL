@@ -5,7 +5,6 @@ $dbname = "herocorploic";
 $host = "localhost";
 $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
 
-// Traitement du formulaire de création
 if ($_POST) {
     $stmt = $db->prepare("INSERT INTO heros (nom, prenom, pseudo, capacite_id, equipe_id) VALUES (:nom, :prenom, :pseudo, :capacite_id, :equipe_id)");
     $stmt->execute([
@@ -19,7 +18,6 @@ if ($_POST) {
     exit();
 }
 
-// Récupérer les listes pour les selects
 $capacites = $db->query("SELECT * FROM capacite ORDER BY nom_capacite")->fetchAll();
 $equipes = $db->query("SELECT * FROM equipe ORDER BY nom_equipe")->fetchAll();
 ?>
