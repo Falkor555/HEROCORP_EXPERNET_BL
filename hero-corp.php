@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<form action="bdd2.php" method="get">
+<form action="hero-corp.php" method="get">
     <label for="search">Rechercher</label>
     <input type="text" name="search" id="search">
     <input type="submit" value="Search" >
@@ -38,13 +38,17 @@
     $requete="";
 
     if(isset($_GET['search'])){
-        $requete=$db->prepare("select * from heros 
-         where nom like ?  or 
-         prenom like ?");
+        $requete=$db->prepare("select * from heros
+            where nom like :nom  or
+            prenom like :prenom or 
+            pseudo like :pseudo or 
+            capacite like :capacite");
         $valeur="%".$_GET['search']."%";
-        $requete->bindParam(1,$valeur);
-        $requete->bindParam(2, $valeur);
-        $requete->execute();
+        $requete->bindParam("nom",$valeur);
+        $requete->bindParam("prenom", $valeur);
+        $requete->bindParam("pseudo", $valeur);
+        $requete->bindParam("capacite", $valeur);
+        $requete->execute();;
 
     }
     else $requete=$db->query("select * from heros");
