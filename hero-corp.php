@@ -18,7 +18,9 @@
             <h1 class="display-4 text-center mb-4 text-primary">
                 <i class="fas fa-mask"></i> Hero Corp
             </h1>
-            
+            <a href='hero-corp-inscription.php' class='btn btn-warning btn-sm' title='signup'>
+                <i class='fas fa-edit'></i> Inscrire un nouveau héros
+            </a>
             <!-- Formulaire de recherche -->
             <div class="card mb-4">
                 <div class="card-body">
@@ -122,7 +124,7 @@
             $capaciteQuery->setFetchMode(PDO::FETCH_CLASS, 'Capacite');
             $capacite = $capaciteQuery->fetch();
         }
-        
+
         // Créer l'objet Equipe
         $equipe = new Equipe();
         if($heroData['equipe_id']) {
